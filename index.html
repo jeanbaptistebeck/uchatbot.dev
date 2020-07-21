@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<title>Chatbot</title>
+	</head>
+	<body>
+		<style type='text/css'>
+			.embeddedServiceHelpButton .helpButton .uiButton {
+				background-color: #005290;
+				font-family: "Salesforce Sans", sans-serif;
+			}
+			.embeddedServiceHelpButton .helpButton .uiButton:focus {
+				outline: 1px solid #005290;
+			}
+			@font-face {
+				font-family: 'Salesforce Sans';
+				src: url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.woff') format('woff'),
+				url('https://c1.sfdcstatic.com/etc/clientlibs/sfdc-aem-master/clientlibs_base/fonts/SalesforceSans-Regular.ttf') format('truetype');
+			}
+		</style>
+
+		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+		<script type='text/javascript'>
+			var initESW = function(gslbBaseURL) {
+				embedded_svc.settings.displayHelpButton = true; //Ou faux
+				embedded_svc.settings.language = ''; //Par exemple, saisissez 'en' ou 'en-US'
+
+				//embedded_svc.settings.defaultMinimizedText = '...'; //(affiche par défaut Discuter avec un expert)
+				//embedded_svc.settings.disabledMinimizedText = '...'; //(affiche par défaut Agent hors ligne)
+
+				//embedded_svc.settings.loadingText = ''; //(affiche par défaut Chargement)
+				//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(définit le domaine de votre déploiement afin de permettre aux visiteurs d'accéder aux sous-domaines pendant la session de chat)
+
+				// Paramètres de Chat
+				//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+					// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+					// Returns a valid button ID.
+				//};
+				//embedded_svc.settings.prepopulatedPrechatFields = {}; //Définit le remplissage automatique des champs du formulaire préalable au chat
+				//embedded_svc.settings.fallbackRouting = []; //Un groupe d’ID de bouton, d’ID d’utilisateur ou userId_buttonId
+				//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(affiche par défaut Nous contacter)
+
+				embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+				embedded_svc.settings.entryFeature = 'LiveAgent';
+
+				embedded_svc.init(
+					'https://systeme-u--dev3.my.salesforce.com',
+					'https://dev3-systeme-u.cs108.force.com/aide',
+					gslbBaseURL,
+					'00D1l0000008iAM',
+					'Equipe_Agents_Chat',
+					{
+						baseLiveAgentContentURL: 'https://c.la1-c1cs-fra.salesforceliveagent.com/content',
+						deploymentId: '5722p000000HCV2',
+						buttonId: '5732p000000LPZd',
+						baseLiveAgentURL: 'https://d.la1-c1cs-fra.salesforceliveagent.com/chat',
+						eswLiveAgentDevName: 'Equipe_Agents_Chat',
+						isOfflineSupportEnabled: false
+					}
+				);
+			};
+
+			if (!window.embedded_svc) {
+				var s = document.createElement('script');
+				s.setAttribute('src', 'https://systeme-u--dev3.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+				s.onload = function() {
+					initESW(null);
+				};
+				document.body.appendChild(s);
+			} else {
+				initESW('https://service.force.com');
+			}
+		</script>
+	</body>
+</html>
