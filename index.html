@@ -70,31 +70,31 @@
 				}]; 
 
 				embedded_svc.settings.extraPrechatInfo = [{
-    					"entityName":"Contact",
-    					"showOnCreate":true,
-    					"linkToEntityName":"Case",
-    					"linkToEntityField":"ContactId",
-    					"saveToTranscript":"Contact",
-    					"entityFieldMaps": [{
-        					"isExactMatch":true,
-        					"fieldName":"FirstName",
-        					"doCreate":true,
-        					"doFind":true,
-       						"label":"First Name"
-    					}, {
-        					"isExactMatch":true,
-        					"fieldName":"LastName",
-        					"doCreate":true,
-        					"doFind":true,
-        					"label":"Last Name"
-    					}, {
-        					"isExactMatch":true,
-        					"fieldName":"Email",
-        					"doCreate":true,
-        					"doFind":true,
-        					"label":"Email"
-    					},
-							    {
+    "entityName":"Contact",
+    "showOnCreate":true,
+    "linkToEntityName":"Case",
+    "linkToEntityField":"ContactId",
+    "saveToTranscript":"Contact",
+    "entityFieldMaps": [{
+        "isExactMatch":true,
+        "fieldName":"FirstName",
+        "doCreate":true,
+        "doFind":true,
+        "label":"First Name"
+    }, {
+        "isExactMatch":true,
+        "fieldName":"LastName",
+        "doCreate":true,
+        "doFind":true,
+        "label":"Last Name"
+    }, {
+        "isExactMatch":true,
+        "fieldName":"Email",
+        "doCreate":true,
+        "doFind":true,
+        "label":"Email"
+    }]
+}, {
     "entityName":"Case",
     "showOnCreate":true,
     "saveToTranscript":"Case",
@@ -116,9 +116,8 @@
         "doCreate":true,
         "doFind":false,
         "label":"Origin"
-    }
-				]
-				}];
+    }]
+}];
 				
 				embedded_svc.settings.offlineSupportMinimizedText = 'Besoin d\'aide ?'; //(affiche par défaut Nous contacter)
 
