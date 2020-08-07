@@ -53,17 +53,17 @@
 				// embedded_svc.settings.fallbackRouting = []; //Un groupe d’ID de bouton, d’ID d’utilisateur ou userId_buttonId
 				
 				embedded_svc.settings.extraPrechatFormDetails = [{
-    					"label":"Prénom",
+    					"label":"First Name",
     					"value":"JB",
     					"displayToAgent":true,
 					"transcriptFields":[]
 				}, {
-    					"label":"Nom",
+    					"label":"Last Name",
     					"value":"Beck",
     					"displayToAgent":true,
 					"transcriptFields":[]
 				}, {
-    					"label":"Adresse e-mail",
+    					"label":"Email",
     					"value":"jb@salesforce.com",
     					"displayToAgent":true,
 					"transcriptFields":[]
@@ -80,19 +80,19 @@
         "fieldName":"FirstName",
         "doCreate":true,
         "doFind":true,
-        "label":"Prénom"
+        "label":"First Name"
     }, {
         "isExactMatch":true,
         "fieldName":"LastName",
         "doCreate":true,
         "doFind":true,
-        "label":"Nom"
+        "label":"Last Name"
     }, {
         "isExactMatch":true,
         "fieldName":"Email",
         "doCreate":true,
         "doFind":true,
-        "label":"Adresse e-mail"
+        "label":"Email"
     }]
 }, {
     "entityName":"Case",
