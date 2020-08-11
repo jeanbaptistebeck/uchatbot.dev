@@ -69,6 +69,10 @@
 				embedded_svc.settings.avatarImgURL = 'https://development-digital-systemeu.demandware.net/on/demandware.static/-/Sites-DigitalU-Library/default/images/u.png';
 				// embedded_svc.settings.prechatBackgroundImgURL = '';
 				
+				embedded_svc.addEventHandler('afterMaximize', function(data) {
+                   			alert('open')
+               			});
+				
 				embedded_svc.init(
 					'https://systeme-u--dev3.my.salesforce.com',
 					'https://dev3-systeme-u.cs108.force.com/aide',
