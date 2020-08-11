@@ -69,12 +69,11 @@
 				
 				embedded_svc.addEventHandler('afterMaximize', function(data) {
    					var div = document.querySelector(".embeddedServiceSidebarFormField:last-of-type")
-   					console.log('div',div)
 					if(div && !document.getElementById('chat-gdpr')) {
 						var chatGdpr = document.createElement("div");
 						chatGdpr.setAttribute('id','chat-gdpr')
 						chatGdpr.setAttribute('class','chat-gdpr')
-						chatGdpr.innerHTML = 'La Coopérative U Enseigne traite vos données personnelles dans le cadre [FINALITE]. Vous disposez des droits d’accès, de rectification, de suppression et de portabilité de vos données, ainsi que d’un droit d’opposition et de limitation à certains traitements et du droit de déterminer le sort de vos données après votre décès. Vous pouvez également, le cas échéant, retirer votre consentement à tout moment. Pour plus d\'informations sur le traitement et les modalités d\'exercice de vos droits, vous pouvez consulter la <a href="https://www.coursesu.com/ProtectionDonneesPersonnelles-text.html">politique de protection des données </a>'
+						chatGdpr.innerHTML = 'La Coopérative U Enseigne traite vos données personnelles dans le cadre [FINALITE]. Vous disposez des droits d’accès, de rectification, de suppression et de portabilité de vos données, ainsi que d’un droit d’opposition et de limitation à certains traitements et du droit de déterminer le sort de vos données après votre décès. Vous pouvez également, le cas échéant, retirer votre consentement à tout moment. Pour plus d\'informations sur le traitement et les modalités d\'exercice de vos droits, vous pouvez consulter la <a href="https://www.coursesu.com/ProtectionDonneesPersonnelles-text.html" target="_blank">politique de protection des données </a>'
 						div.appendChild(chatGdpr);
 					}
 				});
